@@ -1,2 +1,2 @@
-# unifiedRemoteRlexHtpc
+# unifiedRemotePlexHtpc
 Control Plex HTPC on Windows with Unified Remote.
