@@ -70,24 +70,20 @@
         <button weight="1" color="#525252" icon="right" ontap="right" />
     </row>
     <row weight="3">
-        <button icon="previous" ontap="skipPrevious" />
-        <button weight="1" color="#525252" icon="down" ontap="down" />
-        <button icon="next" ontap="skipNext" />
-    </row>
-    <row weight="2">
-        <button text="Menu" ontap="menu" />
         <button text="Home" ontap="home" />
+        <button weight="1" color="#525252" icon="down" ontap="down" />
         <button text="OSD" ontap="osd" />
     </row>
-
     <row weight="2">
         <label text="Playback" color="#333333" />
     </row>
     <row weight="4">
-        <button weight="6" icon="arrowleft" ontap="stepBackward" />
-        <button weight="3" icon="arrowleft" ontap="seekBackward" />
-        <button weight="10" icon="pause" ontap="play_pause" />
-        <button weight="3" icon="arrowright" ontap="seekForward" />
-        <button weight="6" icon="arrowright" ontap="stepForward" />
+        <button weight="2" icon="previous" ontap="skipPrevious" />
+        <button weight="3" icon="arrowleft" ontap="stepBackward" />
+        <button weight="4" icon="arrowleft" ontap="seekBackward" />
+        <button weight="5" icon="pause" ontap="play_pause" />
+        <button weight="4" icon="arrowright" ontap="seekForward" />
+        <button weight="3" icon="arrowright" ontap="stepForward" />
+        <button weight="2" icon="next" ontap="skipNext" />
     </row>
 </layout> 

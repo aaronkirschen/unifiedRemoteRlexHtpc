@@ -338,7 +338,7 @@ end
 -- @help Previous item (NOTE: not bound by default in Plex HTPC)
 actions.skipPrevious = function()
     actions.switch();
-    kb.press("shift",",");
+    kb.press("delete");
 end
 
 -- @help Navigate down
@@ -350,7 +350,7 @@ end
 -- @help Next item (NOTE: not bound by default in Plex HTPC)
 actions.skipNext = function()
     actions.switch();
-    kb.press("shift",".");
+    kb.press("insert");
 end
 
 -- @help Show menu (NOTE: bound by default but doesn't seem to do anything)
