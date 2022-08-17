@@ -1,3 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout onVolumeUp="" onVolumeDown=""  onlaunch="launch">
-</layout>
+<layout orientation="portrait" onVolumeUp="" onVolumeDown="" onlaunch="launch" color="#FF9500">
+    <row weight="2">
+        <label text="Power" color="#333333" />
+    </row>
+    <row weight="2">
+        <button icon="power" ontap="close" />
+        <button icon="rotateleft" ontap="restart" />
+    </row>
+    <row weight="2">
+        <label text="Keyboard" color="#333333" />
+    </row>
+    <row weight="2">
+        <button text="A" ontap="letterA" />
+        <button text="B" ontap="letterB" />
+        <button text="C" ontap="letterC" />
+        <button text="D" ontap="letterD" />
+        <button text="E" ontap="letterE" />
+        <button text="F" ontap="letterF" />
+        <button text="G" ontap="letterG" />
+        <button text="H" ontap="letterH" />
+        <button text="I" ontap="letterI" />
+        <button text="J" ontap="letterJ" />
+        <button text="K" ontap="letterK" />
+        <button text="L" ontap="letterL" />
+        <button text="M" ontap="letterM" />
+    </row>
+    <row weight="2">
+        <button text="N" ontap="letterN" />
+        <button text="O" ontap="letterO" />
+        <button text="P" ontap="letterP" />
+        <button text="Q" ontap="letterQ" />
+        <button text="R" ontap="letterR" />
+        <button text="S" ontap="letterS" />
+        <button text="T" ontap="letterT" />
+        <button text="U" ontap="letterU" />
+        <button text="V" ontap="letterV" />
+        <button text="W" ontap="letterW" />
+        <button text="X" ontap="letterX" />
+        <button text="Y" ontap="letterY" />
+        <button text="Z" ontap="letterZ" />
+    </row>
+
+    <row weight="2">
+        <label text="Settings" color="#333333" />
+    </row>
+    <row weight="3">
+        <button weight="1" icon="docleft" ontap="monitorLeft" />
+        <button weight="1" icon="docright" ontap="monitorRight" />
+        <button weight="1" icon="fullscreen" ontap="fullScreen" />
+        <button weight="1" icon="camera" ontap="viewMode" />
+        <button weight="1" image="../Images/audioTrack.png" ontap="audioTrackCycle" />
+        <button weight="1" image="../Images/subtitles.png" ontap="subtitleTrackCycle" />
+        <button weight="1" image="../Images/swapOutputDeviceSpeakers.png" ontap="swapOutputDevice" />
+        <button weight="1" icon="vdown" ontap="volumeDown" />
+        <button weight="1" icon="vup" ontap="volumeUp" />
+    </row>
+
+    <row weight="2">
+        <label text="Navigation" color="#333333" />
+    </row>
+    <row weight="3">
+        <button icon="back" ontap="back" />
+        <button weight="1" color="#525252" icon="up" ontap="up" />
+        <button text="WATCHED" ontap="toggleWatched" />
+    </row>
+    <row weight="3">
+        <button weight="1" color="#525252" icon="left" ontap="left" />
+        <button weight="1" color="#525252" icon="select" ontap="select" />
+        <button weight="1" color="#525252" icon="right" ontap="right" />
+    </row>
+    <row weight="3">
+        <button icon="previous" ontap="skipPrevious" />
+        <button weight="1" color="#525252" icon="down" ontap="down" />
+        <button icon="next" ontap="skipNext" />
+    </row>
+    <row weight="2">
+        <button text="Menu" ontap="menu" />
+        <button text="Home" ontap="home" />
+        <button text="OSD" ontap="osd" />
+    </row>
+
+    <row weight="2">
+        <label text="Playback" color="#333333" />
+    </row>
+    <row weight="4">
+        <button weight="6" icon="arrowleft" ontap="stepBackward" />
+        <button weight="3" icon="arrowleft" ontap="seekBackward" />
+        <button weight="10" icon="pause" ontap="play_pause" />
+        <button weight="3" icon="arrowright" ontap="seekForward" />
+        <button weight="6" icon="arrowright" ontap="stepForward" />
+    </row>
+</layout> 
