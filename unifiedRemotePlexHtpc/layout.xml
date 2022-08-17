@@ -49,9 +49,9 @@
         <button weight="1" icon="docright" ontap="monitorRight" />
         <button weight="1" icon="fullscreen" ontap="fullScreen" />
         <button weight="1" icon="camera" ontap="viewMode" />
-        <button weight="1" image="../Images/audioTrack.png" ontap="audioTrackCycle" />
-        <button weight="1" image="../Images/subtitles.png" ontap="subtitleTrackCycle" />
-        <button weight="1" image="../Images/swapOutputDeviceSpeakers.png" ontap="swapOutputDevice" />
+        <button weight="1" image="../images/audioTrack.png" ontap="audioTrackCycle" />
+        <button weight="1" image="../images/subtitles.png" ontap="subtitleTrackCycle" />
+        <button weight="1" image="../images/swapOutputDeviceSpeakers.png" ontap="swapOutputDevice" />
         <button weight="1" icon="vdown" ontap="volumeDown" />
         <button weight="1" icon="vup" ontap="volumeUp" />
     </row>
