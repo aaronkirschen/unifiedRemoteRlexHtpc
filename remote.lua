@@ -335,22 +335,11 @@ actions.right = function()
     kb.press("right");
 end
 
--- @help Previous item (NOTE: not bound by default in Plex HTPC)
-actions.skipPrevious = function()
-    actions.switch();
-    kb.press("delete");
-end
 
 -- @help Navigate down
 actions.down = function()
     actions.switch();
     kb.press("down");
-end
-
--- @help Next item (NOTE: not bound by default in Plex HTPC)
-actions.skipNext = function()
-    actions.switch();
-    kb.press("insert");
 end
 
 -- @help Show menu (NOTE: bound by default but doesn't seem to do anything)
@@ -374,6 +363,12 @@ end
 ----------------------------------------------------------
 -- playback
 ----------------------------------------------------------
+
+-- @help Previous item (NOTE: not bound by default in Plex HTPC)
+actions.skipPrevious = function()
+    actions.switch();
+    kb.press("delete");
+end
 
 -- @help Step backwards (-10 min or -1 chapter)
 actions.stepBackward = function()
@@ -403,4 +398,10 @@ end
 actions.stepForward = function()
     actions.switch();
     kb.press("end");
+end
+
+-- @help Next item (NOTE: not bound by default in Plex HTPC)
+actions.skipNext = function()
+    actions.switch();
+    kb.press("insert");
 end
