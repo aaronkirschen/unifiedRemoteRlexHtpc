@@ -1,6 +1,10 @@
 # unifiedRemotePlexHtpc
 Control Plex HTPC on Windows with Unified Remote.
 
+## Remote Screenshot
+<img src="https://github.com/aaronkirschen/unifiedRemotePlexHtpc/blob/main/images/screenShot.jpg?raw=true" width=50% height=50%>
+
+
 ## Important Note
 In order for previous/next item buttons to work, you must add two entries to the `keyboard.json` input map located in the inputmaps folder of the Plex HTPC install path. 
 
