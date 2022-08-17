@@ -78,12 +78,12 @@
         <label text="Playback" color="#333333" />
     </row>
     <row weight="4">
-        <button weight="2" icon="previous" ontap="skipPrevious" />
-        <button weight="3" icon="arrowleft" ontap="stepBackward" />
-        <button weight="4" icon="arrowleft" ontap="seekBackward" />
-        <button weight="5" icon="pause" ontap="play_pause" />
-        <button weight="4" icon="arrowright" ontap="seekForward" />
-        <button weight="3" icon="arrowright" ontap="stepForward" />
-        <button weight="2" icon="next" ontap="skipNext" />
+        <button weight="3" icon="previous" ontap="skipPrevious" />
+        <button weight="4" icon="arrowleft" ontap="stepBackward" />
+        <button weight="5" icon="arrowleft" ontap="seekBackward" />
+        <button weight="6" icon="pause" ontap="play_pause" />
+        <button weight="5" icon="arrowright" ontap="seekForward" />
+        <button weight="4" icon="arrowright" ontap="stepForward" />
+        <button weight="3" icon="next" ontap="skipNext" />
     </row>
 </layout> 
