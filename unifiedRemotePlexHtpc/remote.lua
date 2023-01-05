@@ -1,14 +1,27 @@
 local kb = libs.keyboard;
 local win = libs.win;
+local fs = require("fs");
 local log = require("log");
+local script = libs.script;
 
 local plexHtpcExe = "Plex HTPC.exe";
 local plexHtpcExePath = "C:\\Program Files\\Plex\\Plex HTPC\\" .. plexHtpcExe;
 
 events.detect = function()
     if (OS_WINDOWS) then
-        return libs.fs.exists(plexHtpcExePath);
+        return fs.exists(plexHtpcExePath);     
+    elseif OS_LINUX then
+        foo = script.shell(
+        "#!/bin/bash",
+        "sudo apt install xdotool -y",
+        "sudo snap install plex-htpc",
+        "pidof  Plex >/dev/null",
+        "if [[ $? -ne 0 ]] ; then",
+            "plex-htpc &",
+        "fi"
+        )
     end
+
 end
 
 -- @help Focus Plex HTPC
@@ -18,8 +31,11 @@ actions.switch = function()
             actions.launch();
         end
         win.switchtowait(plexHtpcExe);
-    else
-        log.error("This remote only supports Windows.");
+    elseif OS_LINUX then
+        foo = script.shell(
+        "#!/bin/bash",
+        "xdotool search 'Plex HTPC' windowactivate %3"
+        )
     end
 end
 

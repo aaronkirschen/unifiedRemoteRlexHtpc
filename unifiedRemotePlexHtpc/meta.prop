@@ -1,5 +1,5 @@
 meta.name: Plex HTPC			
 meta.author: Aaron Kirschen
 meta.description: Control Plex HTPC on Windows
-meta.platform: windows
+meta.platform: windows linux
 meta.tags.category: media
