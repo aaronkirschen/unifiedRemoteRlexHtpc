@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout orientation="portrait" onVolumeUp="" onVolumeDown="" onlaunch="launch" color="#FF9500">
+<layout orientation="portrait" onVolumeUp="volumeUp" onVolumeDown="volumeDown"  onlaunch="launch" color="#FF9500">
+
     <row weight="2">
         <label text="Power" color="#333333" />
     </row>
