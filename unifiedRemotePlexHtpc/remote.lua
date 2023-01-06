@@ -9,17 +9,9 @@ local plexHtpcExePath = "C:\\Program Files\\Plex\\Plex HTPC\\" .. plexHtpcExe;
 
 events.detect = function()
     if (OS_WINDOWS) then
-        return fs.exists(plexHtpcExePath);     
-    elseif OS_LINUX then
-        foo = script.shell(
-        "#!/bin/bash",
-        "sudo apt install xdotool -y",
-        "sudo snap install plex-htpc",
-        "pidof  Plex >/dev/null",
-        "if [[ $? -ne 0 ]] ; then",
-            "plex-htpc &",
-        "fi"
-        )
+        return fs.exists(plexHtpcExePath);
+    elseif (OS_LINUX) then
+        actions.launch();
     end
 
 end
@@ -31,11 +23,8 @@ actions.switch = function()
             actions.launch();
         end
         win.switchtowait(plexHtpcExe);
-    elseif OS_LINUX then
-        foo = script.shell(
-        "#!/bin/bash",
-        "xdotool search 'Plex HTPC' windowactivate %3"
-        )
+    elseif (OS_LINUX) then
+        foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate %3")
     end
 end
 
@@ -49,12 +38,19 @@ actions.launch = function()
         pcall(function()
             os.start(plexHtpcExePath);
         end);
+    elseif (OS_LINUX) then
+        foo = script.shell("#!/bin/bash", "sudo apt install xdotool -y", "sudo snap install plex-htpc",
+            "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi")
     end
 end
 
 -- @help Close Plex HTPC
 actions.close = function()
-    win.kill(plexHtpcExe);
+    if (OS_WINDOWS) then
+        win.kill(plexHtpcExe);
+    elseif (OS_LINUX) then
+        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex, killall Plex")
+    end
 end
 
 -- @help Restart Plex HTPC
@@ -285,7 +281,7 @@ end
 -- @help Decrease subtitle delay
 actions.decreaseSubtitleDelay = function()
     actions.switch();
-    kb.press("alt","shift", "s");
+    kb.press("alt", "shift", "s");
 end
 
 -- @help Increase subtitle delay
@@ -350,7 +346,6 @@ actions.right = function()
     actions.switch();
     kb.press("right");
 end
-
 
 -- @help Navigate down
 actions.down = function()
