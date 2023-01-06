@@ -39,8 +39,7 @@ actions.launch = function()
             os.start(plexHtpcExePath);
         end);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "sudo apt install xdotool -y", "sudo snap install plex-htpc",
-            "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
+        foo = script.shell("#!/bin/bash", "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
     end
 end
 
