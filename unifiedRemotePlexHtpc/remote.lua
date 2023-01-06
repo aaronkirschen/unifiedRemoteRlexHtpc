@@ -24,7 +24,7 @@ actions.switch = function()
         end
         win.switchtowait(plexHtpcExe);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate %3")
+        foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate %3");
     end
 end
 
@@ -40,7 +40,7 @@ actions.launch = function()
         end);
     elseif (OS_LINUX) then
         foo = script.shell("#!/bin/bash", "sudo apt install xdotool -y", "sudo snap install plex-htpc",
-            "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi")
+            "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
     end
 end
 
@@ -49,7 +49,7 @@ actions.close = function()
     if (OS_WINDOWS) then
         win.kill(plexHtpcExe);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex, killall Plex")
+        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex, killall Plex");
     end
 end
 
