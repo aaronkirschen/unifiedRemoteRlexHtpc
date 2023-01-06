@@ -11,7 +11,7 @@ events.detect = function()
     if (OS_WINDOWS) then
         return fs.exists(plexHtpcExePath);
     elseif (OS_LINUX) then
-        actions.launch();
+        -- actions.launch();
     end
 
 end
@@ -40,7 +40,7 @@ actions.launch = function()
             os.start(plexHtpcExePath);
         end);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
+        -- foo = script.shell("#!/bin/bash", "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
     end
 end
 
@@ -49,7 +49,7 @@ actions.close = function()
     if (OS_WINDOWS) then
         win.kill(plexHtpcExe);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex, killall Plex");
+        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex");
     end
 end
 
