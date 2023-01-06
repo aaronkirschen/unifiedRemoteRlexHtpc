@@ -24,7 +24,8 @@ actions.switch = function()
         end
         win.switchtowait(plexHtpcExe);
     elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate %3");
+        -- actions.launch();
+        -- foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate --sync %3");
     end
 end
 
@@ -55,7 +56,7 @@ end
 -- @help Restart Plex HTPC
 actions.restart = function()
     actions.close();
-    os.sleep(500);
+    os.sleep(2000);
     actions.launch();
 end
 
