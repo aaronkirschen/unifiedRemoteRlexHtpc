@@ -11,7 +11,21 @@ events.detect = function()
     if (OS_WINDOWS) then
         return fs.exists(plexHtpcExePath);
     elseif (OS_LINUX) then
-        -- actions.launch();
+        foo = script.shell(
+        "#!/bin/bash",
+        
+        -- Checking and starting Plex Media Server
+        "if ! pgrep -f \"Plex Media Server\" > /dev/null; then",
+            "sudo systemctl start plexmediaserver 2>&1",
+        "fi",
+        
+        -- Checking and starting Plex HTPC
+        "if ! ps aux | grep \"/app/bin/QtWebEngineProcess\" | grep -v grep | grep \"application-name=Plex%20HTPC\" > /dev/null; then",
+            "nohup flatpak run tv.plex.PlexHTPC > /dev/null 2>&1 &",   -- Detach process properly
+            "sleep 5",
+        "fi"
+        )
+        return true;
     end
 
 end
