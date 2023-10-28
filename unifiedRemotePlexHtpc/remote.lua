@@ -14,6 +14,7 @@ events.detect = function()
 end
 
 
+
 -- @help Focus Plex HTPC
 actions.switch = function()
     if (OS_WINDOWS) then
@@ -30,6 +31,7 @@ actions.switch = function()
         )
     end
 end
+
 
 ----------------------------------------------------------
 -- power
@@ -74,15 +76,13 @@ end
 actions.close = function()
     if (OS_WINDOWS) then
         win.kill(plexHtpcExe);
-    elseif (OS_LINUX) then
-        foo = script.shell("#!/bin/bash", "killall Plex, killall Plex");
     end
 end
 
 -- @help Restart Plex HTPC
 actions.restart = function()
     actions.close();
-    os.sleep(2000);
+    os.sleep(500);
     actions.launch();
 end
 
@@ -250,23 +250,36 @@ end
 -- settings
 ----------------------------------------------------------
 
--- @help Move screen left
-actions.monitorLeft = function()
-    actions.switch();
-    kb.stroke("lwin", "lshift", "left")
-end
 
--- @help Move screen right
-actions.monitorRight = function()
-    actions.switch();
-    kb.stroke("lwin", "lshift", "right")
+-- @help Move screen left 
+actions.monitorLeft = function()
+    if (OS_WINDOWS) then  
+      kb.stroke("lwin", "lshift", "left")
+    elseif (OS_LINUX) then
+      -- Super + Left may not work in all Linux DEs, but try it first
+      kb.stroke("lsuper", "lshift", "left")
+    end
+end
+  
+  -- @help Move screen right
+  actions.monitorRight = function()
+    if (OS_WINDOWS) then
+      kb.stroke("lwin", "lshift", "right")
+    elseif (OS_LINUX) then
+      -- Super + Right may not work in all Linux DEs, but try it first
+      kb.stroke("lsuper", "lshift", "right")
+    end
 end
 
 -- @help Toggle full screen
 actions.fullScreen = function()
-    actions.switch();
-    kb.press("f11");
-end
+    if (OS_WINDOWS) then
+      kb.press("f11")
+    elseif (OS_LINUX) then
+      -- F11 may not work in all Linux DEs, but try it first
+      kb.press("f11")
+    end
+  end
 
 -- @help Toggle view mode
 actions.viewMode = function()
@@ -318,21 +331,28 @@ end
 
 -- @help Swap output device (bound to CTRL + F9
 actions.swapOutputDevice = function()
-    kb.stroke("ctrl", "f9");
+    if (OS_WINDOWS) then
+        kb.stroke("ctrl", "f9");
+    end
 end
 
 -- @help Decrease playback volume
 actions.volumeDown = function()
-    actions.switch();
-    kb.press("oem_minus");
+    if OS_WINDOWS then
+      kb.press("oem_minus")
+    elseif OS_LINUX then
+      kb.press("kpsubtract") 
+    end
 end
 
 -- @help Increase playback volume
 actions.volumeUp = function()
-    actions.switch();
-    kb.press("oem_plus");
-end
-
+    if OS_WINDOWS then
+      kb.press("oem_plus")
+    elseif OS_LINUX then
+      kb.press("kpadd")
+    end
+  end
 ----------------------------------------------------------
 -- navigation
 ----------------------------------------------------------
