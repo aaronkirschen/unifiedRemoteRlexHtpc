@@ -8,30 +8,9 @@ local plexHtpcExe = "Plex HTPC.exe";
 local plexHtpcExePath = "C:\\Program Files\\Plex\\Plex HTPC\\" .. plexHtpcExe;
 
 events.detect = function()
-    if (OS_WINDOWS) then
-        -- Checking and starting Plex HTPC        
-        if (win.window(plexHtpcExe) == 0) then  
-          pcall(function()
-            os.start(plexHtpcExePath);
-          end);
-        end  
-    elseif (OS_LINUX) then
-        foo = script.shell(
-        "#!/bin/bash",
-        
-        -- Checking and starting Plex Media Server
-        "if ! pgrep -f \"Plex Media Server\" > /dev/null; then",
-            "sudo systemctl start plexmediaserver 2>&1",
-        "fi",
-        
-        -- Checking and starting Plex HTPC
-        "if ! ps aux | grep \"/app/bin/QtWebEngineProcess\" | grep -v grep | grep \"application-name=Plex%20HTPC\" > /dev/null; then",
-            "nohup flatpak run tv.plex.PlexHTPC > /dev/null 2>&1 &",   -- Detach process properly
-            "sleep 5",
-        "fi"
-        )
-        return true;
-    end
+    actions.launchHtpc()
+    actions.launchMediaserver()
+    return true
 end
 
 
@@ -56,16 +35,40 @@ end
 -- power
 ----------------------------------------------------------
 
--- @help Launch Plex HTPC
-actions.launch = function()
-    if (OS_WINDOWS) then
-        pcall(function()
-            os.start(plexHtpcExePath);
-        end);
-    elseif (OS_LINUX) then
-        -- foo = script.shell("#!/bin/bash", "pidof  Plex >/dev/null", "if [[ $? -ne 0 ]] ; then", "plex-htpc &", "fi");
+-- Launch Plex Media Server  
+actions.launchMediaserver = function()
+    if (OS_LINUX) then
+      foo = script.shell(
+      "#!/bin/bash", 
+      
+      -- Checking and starting Plex Media Server  
+      "if ! pgrep -f \"Plex Media Server\" > /dev/null; then",
+        "sudo systemctl start plexmediaserver 2>&1",
+      "fi"
+      )
     end
 end
+
+actions.launchHtpc = function()
+    if (OS_WINDOWS) then
+      if (win.window(plexHtpcExe) == 0) then   
+        pcall(function()
+          os.start(plexHtpcExePath);
+        end);
+      end
+    elseif (OS_LINUX) then  
+      foo = script.shell(
+      "#!/bin/bash",
+          
+      -- Checking and starting Plex HTPC
+      "if ! ps aux | grep \"/app/bin/QtWebEngineProcess\" | grep -v grep | grep \"application-name=Plex%20HTPC\" > /dev/null; then",
+          "nohup flatpak run tv.plex.PlexHTPC > /dev/null 2>&1 &",   -- Detach process properly
+          "sleep 5",
+      "fi"
+      )
+    end
+end
+
 
 -- @help Close Plex HTPC
 actions.close = function()
