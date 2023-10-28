@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout orientation="portrait" onVolumeUp="volumeUp" onVolumeDown="volumeDown"  onlaunch="launch" color="#FF9500">
-
-    <row weight="2">
-        <label text="Power" color="#333333" />
-    </row>
-    <row weight="2">
-        <button icon="power" ontap="close" />
-        <button icon="rotateleft" ontap="restart" />
-    </row>
     <row weight="2">
         <label text="Keyboard" color="#333333" />
     </row>
@@ -87,4 +79,4 @@
         <button weight="4" icon="arrowright" ontap="stepForward" />
         <button weight="3" icon="next" ontap="skipNext" />
     </row>
-</layout> 
+</layout>
