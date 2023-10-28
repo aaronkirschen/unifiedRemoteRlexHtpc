@@ -38,8 +38,15 @@ actions.switch = function()
         end
         win.switchtowait(plexHtpcExe);
     elseif (OS_LINUX) then
-        -- actions.launch();
-        -- foo = script.shell("#!/bin/bash", "xdotool search 'Plex HTPC' windowactivate --sync %3");
+        foo = script.shell(
+        "#!/bin/bash",
+        -- Attempt to focus on Plex HTPC using wmctrl
+        "PLEX_WINDOW=$(wmctrl -l | grep 'Plex HTPC')",
+        "if [ ! -z \"$PLEX_WINDOW\" ]; then",
+            "WINDOW_ID=$(echo \"$PLEX_WINDOW\" | awk '{print $1}')",
+            "wmctrl -i -a \"$WINDOW_ID\"",
+        "fi"
+        )
     end
 end
 
