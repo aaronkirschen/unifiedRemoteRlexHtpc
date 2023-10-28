@@ -239,7 +239,7 @@ end
 -- @help Toggle full screen
 actions.fullScreen = function()
     actions.switch();
-    kb.press("\\");
+    kb.press("f11");
 end
 
 -- @help Toggle view mode
