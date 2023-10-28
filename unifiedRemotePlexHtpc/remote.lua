@@ -9,7 +9,12 @@ local plexHtpcExePath = "C:\\Program Files\\Plex\\Plex HTPC\\" .. plexHtpcExe;
 
 events.detect = function()
     if (OS_WINDOWS) then
-        return fs.exists(plexHtpcExePath);
+        -- Checking and starting Plex HTPC        
+        if (win.window(plexHtpcExe) == 0) then  
+          pcall(function()
+            os.start(plexHtpcExePath);
+          end);
+        end  
     elseif (OS_LINUX) then
         foo = script.shell(
         "#!/bin/bash",
@@ -27,15 +32,12 @@ events.detect = function()
         )
         return true;
     end
-
 end
+
 
 -- @help Focus Plex HTPC
 actions.switch = function()
     if (OS_WINDOWS) then
-        if (win.window(plexHtpcExe) == 0) then
-            actions.launch();
-        end
         win.switchtowait(plexHtpcExe);
     elseif (OS_LINUX) then
         foo = script.shell(
