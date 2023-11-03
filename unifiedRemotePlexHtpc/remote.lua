@@ -20,6 +20,7 @@ actions.switch = function()
     if (OS_WINDOWS) then
         win.switchtowait(plexHtpcExe);
     elseif (OS_LINUX) then
+        actions.launchHtpc();
         foo = script.shell(
         "#!/bin/bash",
         -- Attempt to focus on Plex HTPC using wmctrl
