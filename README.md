@@ -1,5 +1,5 @@
 # unifiedRemotePlexHtpc
-Control Plex HTPC on Windows with Unified Remote.
+Control Plex HTPC on Windows/Linux with Unified Remote.
 
 ## Remote Screenshot
 <img src="https://github.com/aaronkirschen/unifiedRemotePlexHtpc/blob/main/images/screenShot.jpg?raw=true" width=50% height=50%>
