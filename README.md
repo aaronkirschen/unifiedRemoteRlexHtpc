@@ -2,6 +2,7 @@
 Control Plex HTPC on Windows/Linux with Unified Remote.
 
 ## Remote Screenshot
+(slightly outdated, power section has been removed.)
 <img src="https://github.com/aaronkirschen/unifiedRemotePlexHtpc/blob/main/images/screenShot.jpg?raw=true" width=50% height=50%>
 
 ## Required setup for swap output device button
