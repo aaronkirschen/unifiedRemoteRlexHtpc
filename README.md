@@ -5,7 +5,7 @@ Control Plex HTPC on Windows/Linux with Unified Remote.
 <img src="https://github.com/aaronkirschen/unifiedRemotePlexHtpc/blob/main/images/screenShot.jpg?raw=true" width=50% height=50%>
 
 ## Required setup for swap output device button
-In order for the swap output device button to work, you must have the keybind CTRL + F9 configured to swap the sound output device on your system. Personally I do this with Voicemeeter Macro Buttons.
+In order for the swap output device button to work, you must have the keybind CTRL + F9 (Windows) or WIN + F9 (Linux) configured to swap the sound output device on your system. 
 
 
 ## Required setup for previous/next item buttons
