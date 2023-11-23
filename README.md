@@ -1,5 +1,6 @@
 # unifiedRemotePlexHtpc
 Control Plex HTPC on Windows/Linux with Unified Remote.
+Note: Some actions may need to be customized for your specific setup.
 
 ## Remote Screenshot
 (slightly outdated, power section has been removed.)
