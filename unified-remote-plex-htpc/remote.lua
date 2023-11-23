@@ -333,12 +333,12 @@ actions.increaseSubtitleDelay = function()
     kb.press("alt", "s");
 end
 
--- @help Swap output device (CTRL + F9 on Windows, META + F9 on Linux)
+-- @help Swap output device (CTRL + F9 on Windows, win + F9 on Linux)
 actions.swapOutputDevice = function()
     if (OS_WINDOWS) then
       kb.stroke("ctrl", "f9");
     elseif (OS_LINUX) then
-      kb.stroke("meta", "f9") 
+      kb.stroke("win", "f9") 
     end
   end
 
