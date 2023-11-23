@@ -4,6 +4,7 @@ Note: Some actions may need to be customized for your specific setup.
 
 ## Remote Screenshot
 (slightly outdated, power section has been removed.)
+
 <img src="https://github.com/aaronkirschen/unifiedRemotePlexHtpc/blob/main/images/screenShot.jpg?raw=true" width=50% height=50%>
 
 ## Required setup for swap output device button
