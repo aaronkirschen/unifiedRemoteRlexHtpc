@@ -254,6 +254,7 @@ end
 
 -- @help Move screen left 
 actions.monitorLeft = function()
+    actions.switch();
     if (OS_WINDOWS) then  
       kb.stroke("lwin", "lshift", "left")
     elseif (OS_LINUX) then
@@ -264,6 +265,7 @@ end
   
   -- @help Move screen right
   actions.monitorRight = function()
+    actions.switch();
     if (OS_WINDOWS) then
       kb.stroke("lwin", "lshift", "right")
     elseif (OS_LINUX) then
@@ -274,6 +276,7 @@ end
 
 -- @help Toggle full screen
 actions.fullScreen = function()
+    actions.switch();
     if (OS_WINDOWS) then
       kb.press("f11")
     elseif (OS_LINUX) then
@@ -341,6 +344,7 @@ actions.swapOutputDevice = function()
 
 -- @help Decrease playback volume
 actions.volumeDown = function()
+    actions.switch();
     if OS_WINDOWS then
       kb.press("oem_minus")
     elseif OS_LINUX then
@@ -350,6 +354,7 @@ end
 
 -- @help Increase playback volume
 actions.volumeUp = function()
+    actions.switch();
     if OS_WINDOWS then
       kb.press("oem_plus")
     elseif OS_LINUX then
