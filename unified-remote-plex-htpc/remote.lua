@@ -258,8 +258,8 @@ actions.monitorLeft = function()
     if (OS_WINDOWS) then  
       kb.stroke("lwin", "lshift", "left")
     elseif (OS_LINUX) then
-      -- Super + Left may not work in all Linux DEs, but try it first
-      kb.stroke("lsuper", "lshift", "left")
+      -- This works in KDE but may need to be configured for your DE
+      kb.stroke("win", "lshift", "left")
     end
 end
   
@@ -269,8 +269,8 @@ end
     if (OS_WINDOWS) then
       kb.stroke("lwin", "lshift", "right")
     elseif (OS_LINUX) then
-      -- Super + Right may not work in all Linux DEs, but try it first
-      kb.stroke("lsuper", "lshift", "right")
+      -- This works in KDE but may need to be configured for your DE
+      kb.stroke("wind", "lshift", "right")
     end
 end
 
@@ -280,7 +280,7 @@ actions.fullScreen = function()
     if (OS_WINDOWS) then
       kb.press("f11")
     elseif (OS_LINUX) then
-      -- F11 may not work in all Linux DEs, but try it first
+      -- This works in KDE but may need to be configured for your DE
       kb.press("f11")
     end
   end
