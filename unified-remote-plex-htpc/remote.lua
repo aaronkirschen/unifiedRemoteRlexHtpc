@@ -7,13 +7,6 @@ local script = libs.script;
 local plexHtpcExe = "Plex HTPC.exe";
 local plexHtpcExePath = "C:\\Program Files\\Plex\\Plex HTPC\\" .. plexHtpcExe;
 
-events.detect = function()
-    actions.launchHtpc()
-    actions.launchMediaserver()
-    return true
-end
-
-
 
 -- @help Focus Plex HTPC
 actions.switch = function()
